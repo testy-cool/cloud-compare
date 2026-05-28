@@ -402,9 +402,9 @@ function buildContent() {
       ).join('');
       const searchText = [svc.name, svc.sub, svc.desc, ...PROVIDERS.flatMap(p => svc[p.id] || [])].join(' ').toLowerCase();
       const d = DETAILS[svc.name] || {};
-      const whenHTML = d.when ? `<div class="detail-label">When you need this</div><div class="detail-when">${d.when}</div>` : '';
-      const whyHTML = d.why ? `<div class="detail-label">Why this exists</div><div class="detail-why">${d.why}</div>` : '';
-      const hintHTML = svc.hint ? `<div class="detail-label">Pricing</div><div class="billing-hint">${svc.hint}</div>` : '';
+      const whenHTML = d.when ? `<div class="detail-when">${d.when}</div>` : '';
+      const whyHTML = d.why ? `<div class="detail-why">${d.why}</div>` : '';
+      const hintHTML = svc.hint ? `<div class="detail-pricing">${svc.hint}</div>` : '';
       return `<tr data-search="${searchText}" ${PROVIDERS.map(p => `data-has-${p.id}="${(svc[p.id]||[]).length > 0}"`).join(' ')} onclick="this.classList.toggle('expanded')">
         <td>
           <div class="service-name">${svc.name} <span class="expand-indicator">&#9654;</span></div>
@@ -412,7 +412,6 @@ function buildContent() {
           <div class="service-detail">
             ${whenHTML}
             ${whyHTML}
-            <div class="detail-label">Details</div>
             <div class="service-desc">${svc.desc}</div>
             ${hintHTML}
           </div>
