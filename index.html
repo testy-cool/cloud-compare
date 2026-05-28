@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Compare - AWS vs Azure vs GCP vs Cloudflare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Cloud Compare</h1>
+            <p class="subtitle">Side-by-side comparison of AWS, Azure, GCP &amp; Cloudflare services</p>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search services... (e.g. database, serverless, R2)" autofocus>
+                <span class="search-count" id="search-count"></span>
+            </div>
+        </div>
+    </header>
+    <div class="toolbar">
+        <nav id="toc"></nav>
+        <div class="controls">
+            <button id="toggle-view" class="ctrl-btn" title="Expand or collapse all descriptions">Expand all descriptions</button>
+            <div class="provider-filters" id="provider-filters"></div>
+            <button id="expand-all" class="ctrl-btn ctrl-sm" title="Expand or collapse all categories">Collapse all</button>
+        </div>
+    </div>
+    <main id="content"></main>
+    <footer>
+        <p>Data compiled from official documentation. Last updated May 2026.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
