@@ -239,10 +239,10 @@ main {
   line-height: 1.5;
 }
 
-.service-desc {
+.service-detail {
   display: none;
   margin-top: 0.45rem;
-  padding: 0.5rem 0.65rem;
+  padding: 0.55rem 0.7rem;
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.55;
@@ -250,12 +250,27 @@ main {
   border-radius: 6px;
   border-left: 3px solid var(--border);
 }
+tr.expanded .service-detail { display: block; }
 
-tr.expanded .service-desc { display: block; }
+.service-desc { margin-bottom: 0.4rem; }
+
+.detail-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
+}
+.detail-label:first-child { margin-top: 0; }
+
+.detail-when { color: var(--text-secondary); }
+.detail-pick { color: var(--text); font-weight: 500; }
 
 .billing-hint {
-  display: inline-block;
-  margin-top: 0.3rem;
+  display: none;
+  margin-top: 0.35rem;
   padding: 0.12rem 0.5rem;
   font-size: 0.73rem;
   font-weight: 500;
@@ -263,6 +278,7 @@ tr.expanded .service-desc { display: block; }
   background: #edf5dc;
   border-radius: 4px;
 }
+tr.expanded .billing-hint { display: inline-block; }
 
 .expand-indicator {
   display: inline-block;
